@@ -1,34 +1,124 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <title>Login Simples</title>
+<meta charset="UTF-8">
+<title>Login</title>
+
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background: black;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    color: white;
+  }
+
+  .container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,0.8);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(255,255,255,0.2);
+  }
+
+  input {
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    width: 200px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+  }
+
+  button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    background: #ff4d6d;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  button:hover {
+    background: #ff1e4d;
+  }
+
+  #mensagem {
+    margin-top: 10px;
+  }
+
+  /* Corações */
+  .heart {
+    position: absolute;
+    color: #ff4d6d;
+    font-size: 20px;
+    animation: subir 5s linear infinite;
+  }
+
+  @keyframes subir {
+    0% {
+      transform: translateY(100vh) scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-10vh) scale(1.5);
+      opacity: 0;
+    }
+  }
+</style>
+
 </head>
 <body>
 
-  <h2>Login</h2>
+<div class="container">
+  <h2>Login ❤️</h2>
 
-  <input type="text" id="usuario" placeholder="Usuário"><br><br>
-  <input type="password" id="senha" placeholder="Senha"><br><br>
+  <input type="text" id="usuario" placeholder="Usuário">
+  <input type="password" id="senha" placeholder="Senha">
 
   <button onclick="login()">Entrar</button>
 
   <p id="mensagem"></p>
+</div>
 
-  <script>
-    function login() {
-      var user = document.getElementById("usuario").value;
-      var pass = document.getElementById("senha").value;
+<script>
+  function login() {
+    var user = document.getElementById("usuario").value;
+    var pass = document.getElementById("senha").value;
 
-      // usuário e senha fixos
-      if (user === "admin" && pass === "1234") {
-        document.getElementById("mensagem").innerHTML = "Login realizado com sucesso!";
-        window.location.href = "home.html"; // redireciona
-      } else {
-        document.getElementById("mensagem").innerHTML = "Usuário ou senha inválidos!";
-      }
+    if (user === "admin" && pass === "1234") {
+      document.getElementById("mensagem").innerHTML = "Bem-vindo!";
+    } else {
+      document.getElementById("mensagem").innerHTML = "Erro no login!";
     }
-  </script>
+  }
+
+  // Criar corações subindo
+  function criarCoracao() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "❤️";
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (Math.random() * 20 + 10) + "px";
+    heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+      heart.remove();
+    }, 5000);
+  }
+
+  setInterval(criarCoracao, 300);
+</script>
 
 </body>
 </html>
