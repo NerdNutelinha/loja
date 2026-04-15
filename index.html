@@ -2,82 +2,86 @@
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
-<title>Login</title>
+<title>Login ❤️</title>
 
 <style>
-  body {
-    margin: 0;
-    padding: 0;
-    background: black;
-    font-family: Arial, sans-serif;
-    overflow: hidden;
-    color: white;
-  }
+body {
+  margin: 0;
+  background: black;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+  color: white;
+}
 
-  .container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(0,0,0,0.8);
-    padding: 30px;
-    border-radius: 15px;
-    text-align: center;
-    box-shadow: 0 0 20px rgba(255,255,255,0.2);
-  }
+/* Caixa login */
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0,0,0,0.8);
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(255,255,255,0.2);
+}
 
-  input {
-    display: block;
-    margin: 10px auto;
-    padding: 10px;
-    width: 200px;
-    border-radius: 10px;
-    border: none;
-    outline: none;
-  }
+/* Área logada */
+#areaLogada {
+  display: none;
+  text-align: center;
+  margin-top: 20%;
+  font-size: 25px;
+}
 
-  button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 10px;
-    background: #ff4d6d;
-    color: white;
-    cursor: pointer;
-    transition: 0.3s;
-  }
+/* Inputs */
+input {
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+  width: 200px;
+  border-radius: 10px;
+  border: none;
+}
 
-  button:hover {
-    background: #ff1e4d;
-  }
+/* Botão */
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  background: #ff4d6d;
+  color: white;
+  cursor: pointer;
+}
 
-  #mensagem {
-    margin-top: 10px;
-  }
+button:hover {
+  background: #ff1e4d;
+}
 
-  /* Corações */
-  .heart {
-    position: absolute;
-    color: #ff4d6d;
-    font-size: 20px;
-    animation: subir 5s linear infinite;
-  }
+/* Corações */
+.heart {
+  position: absolute;
+  color: #ff4d6d;
+  animation: subir linear infinite;
+}
 
-  @keyframes subir {
-    0% {
-      transform: translateY(100vh) scale(1);
-      opacity: 1;
-    }
-    100% {
-      transform: translateY(-10vh) scale(1.5);
-      opacity: 0;
-    }
+@keyframes subir {
+  0% {
+    transform: translateY(100vh);
+    opacity: 1;
   }
+  100% {
+    transform: translateY(-10vh);
+    opacity: 0;
+  }
+}
 </style>
 
 </head>
 <body>
 
-<div class="container">
+<!-- LOGIN -->
+<div class="container" id="loginBox">
   <h2>Login ❤️</h2>
 
   <input type="text" id="usuario" placeholder="Usuário">
@@ -88,36 +92,43 @@
   <p id="mensagem"></p>
 </div>
 
+<!-- AREA LOGADA -->
+<div id="areaLogada">
+  <h1>Bem-vinda 💖</h1>
+  <p>Você entrou com sucesso!</p>
+</div>
+
 <script>
-  function login() {
-    var user = document.getElementById("usuario").value;
-    var pass = document.getElementById("senha").value;
+function login() {
+  var user = document.getElementById("usuario").value;
+  var pass = document.getElementById("senha").value;
 
-    if (user === "admin" && pass === "1234") {
-      document.getElementById("mensagem").innerHTML = "Bem-vindo!";
-    } else {
-      document.getElementById("mensagem").innerHTML = "Erro no login!";
-    }
+  if (user === "admin" && pass === "1234") {
+    document.getElementById("loginBox").style.display = "none";
+    document.getElementById("areaLogada").style.display = "block";
+  } else {
+    document.getElementById("mensagem").innerHTML = "Login inválido!";
   }
+}
 
-  // Criar corações subindo
-  function criarCoracao() {
-    const heart = document.createElement("div");
-    heart.classList.add("heart");
-    heart.innerHTML = "❤️";
+// Corações subindo
+function criarCoracao() {
+  const heart = document.createElement("div");
+  heart.classList.add("heart");
+  heart.innerHTML = "❤️";
 
-    heart.style.left = Math.random() * 100 + "vw";
-    heart.style.fontSize = (Math.random() * 20 + 10) + "px";
-    heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = (Math.random() * 20 + 10) + "px";
+  heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
 
-    document.body.appendChild(heart);
+  document.body.appendChild(heart);
 
-    setTimeout(() => {
-      heart.remove();
-    }, 5000);
-  }
+  setTimeout(() => {
+    heart.remove();
+  }, 5000);
+}
 
-  setInterval(criarCoracao, 300);
+setInterval(criarCoracao, 300);
 </script>
 
 </body>
