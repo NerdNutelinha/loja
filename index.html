@@ -1,135 +1,94 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<title>Login ❤️</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assembleia de Deus - Portal Informativo</title>
 
-<style>
-body {
-  margin: 0;
-  background: black;
-  font-family: Arial, sans-serif;
-  overflow: hidden;
-  color: white;
-}
-
-/* Caixa login */
-.container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: rgba(0,0,0,0.8);
-  padding: 30px;
-  border-radius: 15px;
-  text-align: center;
-  box-shadow: 0 0 20px rgba(255,255,255,0.2);
-}
-
-/* Área logada */
-#areaLogada {
-  display: none;
-  text-align: center;
-  margin-top: 20%;
-  font-size: 25px;
-}
-
-/* Inputs */
-input {
-  display: block;
-  margin: 10px auto;
-  padding: 10px;
-  width: 200px;
-  border-radius: 10px;
-  border: none;
-}
-
-/* Botão */
-button {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 10px;
-  background: #ff4d6d;
-  color: white;
-  cursor: pointer;
-}
-
-button:hover {
-  background: #ff1e4d;
-}
-
-/* Corações */
-.heart {
-  position: absolute;
-  color: #ff4d6d;
-  animation: subir linear infinite;
-}
-
-@keyframes subir {
-  0% {
-    transform: translateY(100vh);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(-10vh);
-    opacity: 0;
-  }
-}
-</style>
-
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<!-- LOGIN -->
-<div class="container" id="loginBox">
-  <h2>Login ❤️</h2>
+<header>
+    <h1>Assembleia de Deus</h1>
+    <p>Portal Informativo da Comunidade</p>
+</header>
 
-  <input type="text" id="usuario" placeholder="Usuário">
-  <input type="password" id="senha" placeholder="Senha">
+<nav>
+    <a href="#sobre">Sobre</a>
+    <a href="#eventos">Eventos</a>
+    <a href="#lideranca">Liderança</a>
+    <a href="#contato">Contato</a>
+</nav>
 
-  <button onclick="login()">Entrar</button>
+<section class="banner">
+    <h2>Bem-vindo ao Portal da Igreja</h2>
+    <p>
+        Informações, eventos e comunicados da Assembleia de Deus
+        de forma simples e acessível.
+    </p>
+</section>
 
-  <p id="mensagem"></p>
-</div>
+<section id="sobre" class="container">
+    <h2>Sobre o Projeto</h2>
 
-<!-- AREA LOGADA -->
-<div id="areaLogada">
-  <h1>Bem-vinda 💖</h1>
-  <p>Você entrou com sucesso!</p>
-</div>
+    <p>
+        Este portal foi desenvolvido como parte de uma atividade
+        extensionista do curso de Análise e Desenvolvimento de Sistemas,
+        com o objetivo de modernizar a comunicação da igreja utilizando
+        ferramentas gratuitas e acessíveis.
+    </p>
+</section>
 
-<script>
-function login() {
-  var user = document.getElementById("usuario").value;
-  var pass = document.getElementById("senha").value;
+<section id="eventos" class="container">
+    <h2>Próximos Eventos</h2>
 
-  if (user === "admin" && pass === "1234") {
-    document.getElementById("loginBox").style.display = "none";
-    document.getElementById("areaLogada").style.display = "block";
-  } else {
-    document.getElementById("mensagem").innerHTML = "Login inválido!";
-  }
-}
+    <div class="card">
+        <h3>Culto de Jovens</h3>
+        <p>Sábado às 19h30</p>
+    </div>
 
-// Corações subindo
-function criarCoracao() {
-  const heart = document.createElement("div");
-  heart.classList.add("heart");
-  heart.innerHTML = "❤️";
+    <div class="card">
+        <h3>Escola Bíblica</h3>
+        <p>Domingo às 09h00</p>
+    </div>
 
-  heart.style.left = Math.random() * 100 + "vw";
-  heart.style.fontSize = (Math.random() * 20 + 10) + "px";
-  heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
+    <div class="card">
+        <h3>Campanha de Oração</h3>
+        <p>Quarta-feira às 20h00</p>
+    </div>
+</section>
 
-  document.body.appendChild(heart);
+<section id="lideranca" class="container">
+    <h2>Área da Liderança</h2>
 
-  setTimeout(() => {
-    heart.remove();
-  }, 5000);
-}
+    <p>
+        A liderança possui um ambiente separado na nuvem para
+        armazenamento de fotos, relatórios e materiais internos.
+    </p>
 
-setInterval(criarCoracao, 300);
-</script>
+    <button onclick="mostrarMensagem()">
+        Mais Informações
+    </button>
+
+    <p id="mensagem"></p>
+</section>
+
+<section id="contato" class="container">
+    <h2>Contato</h2>
+
+    <p>Email: contato@igreja.com</p>
+    <p>Ribeirão das Neves - Minas Gerais</p>
+</section>
+
+<footer>
+    <p>
+        Projeto Extensionista ADS • Assembleia de Deus
+    </p>
+</footer>
+
+<script src="script.js"></script>
 
 </body>
 </html>
