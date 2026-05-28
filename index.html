@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Assembleia de Deus - Portal Informativo</title>
-
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <header>
-    <h1>Assembleia de Deus</h1>
-    <p>Portal Informativo da Comunidade</p>
+    <div class="header-content">
+        <h1>Assembleia de Deus</h1>
+        <p>Portal Informativo da Comunidade</p>
+    </div>
 </header>
 
 <nav>
@@ -23,72 +23,71 @@
 </nav>
 
 <section class="banner">
-    <h2>Bem-vindo ao Portal da Igreja</h2>
-    <p>
-        Informações, eventos e comunicados da Assembleia de Deus
-        de forma simples e acessível.
-    </p>
-</section>
-
-<section id="sobre" class="container">
-    <h2>Sobre o Projeto</h2>
-
-    <p>
-        Este portal foi desenvolvido como parte de uma atividade
-        extensionista do curso de Análise e Desenvolvimento de Sistemas,
-        com o objetivo de modernizar a comunicação da igreja utilizando
-        ferramentas gratuitas e acessíveis.
-    </p>
-</section>
-
-<section id="eventos" class="container">
-    <h2>Próximos Eventos</h2>
-
-    <div class="card">
-        <h3>Culto de Jovens</h3>
-        <p>Sábado às 19h30</p>
-    </div>
-
-    <div class="card">
-        <h3>Escola Bíblica</h3>
-        <p>Domingo às 09h00</p>
-    </div>
-
-    <div class="card">
-        <h3>Campanha de Oração</h3>
-        <p>Quarta-feira às 20h00</p>
+    <div class="banner-content">
+        <h2>Bem-vindo ao Portal da Igreja</h2>
+        <p>
+            Informações, eventos e comunicados da Assembleia de Deus
+            de forma simples e acessível.
+        </p>
     </div>
 </section>
 
-<section id="lideranca" class="container">
-    <h2>Área da Liderança</h2>
+<main>
+    <section id="sobre" class="container">
+        <h2>Sobre o Projeto</h2>
+        <p>
+            Este portal foi desenvolvido como parte de uma atividade
+            extensionista do curso de Análise e Desenvolvimento de Sistemas,
+            com o objetivo de modernizar a comunicação da igreja utilizando
+            ferramentas gratuitas e acessíveis.
+        </p>
+    </section>
 
-    <p>
-        A liderança possui um ambiente separado na nuvem para
-        armazenamento de fotos, relatórios e materiais internos.
-    </p>
+    <section id="eventos" class="container">
+        <h2>Próximos Eventos</h2>
+        <div class="events-grid">
+            <div class="card">
+                <h3>Culto de Jovens</h3>
+                <p class="event-day">🗓️ Sábado às 19h30</p>
+            </div>
 
-    <button onclick="mostrarMensagem()">
-        Mais Informações
-    </button>
+            <div class="card">
+                <h3>Escola Bíblica</h3>
+                <p class="event-day">🗓️ Domingo às 09h00</p>
+            </div>
 
-    <p id="mensagem"></p>
-</section>
+            <div class="card">
+                <h3>Campanha de Oração</h3>
+                <p class="event-day">🗓️ Quarta-feira às 20h00</p>
+            </div>
+        </div>
+    </section>
 
-<section id="contato" class="container">
-    <h2>Contato</h2>
+    <section id="lideranca" class="container">
+        <h2>Área da Liderança</h2>
+        <p>
+            A liderança possui um ambiente separado na nuvem para
+            armazenamento de fotos, relatórios e materiais internos.
+        </p>
+        <button onclick="mostrarMensagem()">
+            Mais Informações
+        </button>
+        <p id="mensagem" class="msg-box"></p>
+    </section>
 
-    <p>Email: contato@igreja.com</p>
-    <p>Ribeirão das Neves - Minas Gerais</p>
-</section>
+    <section id="contato" class="container">
+        <h2>Contato</h2>
+        <div class="contact-box">
+            <p><strong>📧 Email:</strong> contato@igreja.com</p>
+            <p><strong>📍 Localização:</strong> Ribeirão das Neves - Minas Gerais</p>
+        </div>
+    </section>
+</main>
 
 <footer>
-    <p>
-        Projeto Extensionista ADS • Assembleia de Deus
-    </p>
+    <p>Projeto Extensionista ADS • Assembleia de Deus</p>
 </footer>
 
 <script src="script.js"></script>
-
 </body>
 </html>
