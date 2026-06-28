@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assembleia de Deus - Portal Informativo</title>
+    <title>Assembleia de Deus em BH - Portal Informativo</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,63 +11,100 @@
 <header>
     <div class="header-content">
         <h1>Assembleia de Deus</h1>
-        <p>Portal Informativo da Comunidade</p>
+        <p>Ministério de Belo Horizonte</p>
     </div>
 </header>
 
 <nav>
-    <a href="#sobre">Sobre</a>
-    <a href="#eventos">Eventos</a>
+    <a href="#sobre">Nossa História</a>
+    <a href="#cultos">Cultos & Agenda</a>
+    <a href="#ministerios">Ministérios</a>
+    <a href="#midia">Cultos Online</a>
     <a href="#lideranca">Liderança</a>
-    <a href="#contato">Contato</a>
+    <a href="#contato">Pedidos & Contato</a>
 </nav>
 
 <section class="banner">
     <div class="banner-content">
-        <h2>Bem-vindo ao Portal da Igreja</h2>
+        <h2>Bem-vindo à Assembleia de Deus - Central BH</h2>
         <p>
-            Informações, eventos e comunicados da Assembleia de Deus
-            de forma simples e acessível.
+            Uma igreja que ama, acolhe e prega a Palavra de Deus. 
+            Acompanhe nossas atividades e programações semanais.
         </p>
     </div>
 </section>
 
 <main>
+    <!-- SOBRE: União do seu projeto acadêmico com os dados reais da AD-BH -->
     <section id="sobre" class="container">
-        <h2>Sobre o Projeto</h2>
+        <h2>Sobre o Projeto & Nossa História</h2>
         <p>
-            Este portal foi desenvolvido como parte de uma atividade
-            extensionista do curso de Análise e Desenvolvimento de Sistemas,
-            com o objetivo de modernizar a comunicação da igreja utilizando
-            ferramentas gratuitas e acessíveis.
+            Este portal foi desenvolvido como parte de uma atividade extensionista do curso de Análise e Desenvolvimento de Sistemas, com o objetivo de modernizar e centralizar a comunicação digital da igreja utilizando ferramentas acessíveis e hospedagem em nuvem.
+        </p>
+        <p>
+            A <strong>Assembleia de Deus em Belo Horizonte</strong> iniciou sua trajetória em 1927. Desde então, sob a liderança do Ministério, tem sido um farol de evangelização, ação social e edificação espiritual na capital mineira e região metropolitana.
         </p>
     </section>
 
-    <section id="eventos" class="container">
-        <h2>Próximos Eventos</h2>
+    <!-- CULTOS: Horários reais e oficiais da AD-BH -->
+    <section id="cultos" class="container">
+        <h2>Horários dos Cultos</h2>
         <div class="events-grid">
             <div class="card">
-                <h3>Culto de Jovens</h3>
-                <p class="event-day">🗓️ Sábado às 19h30</p>
+                <h3>Culto de Doutrina & Ensino</h3>
+                <p class="event-day">🗓️ Terça-feira às 19h30</p>
             </div>
 
             <div class="card">
-                <h3>Escola Bíblica</h3>
+                <h3>Libertação & Oração</h3>
+                <p class="event-day">🗓️ Quinta-feira às 19h30</p>
+            </div>
+
+            <div class="card">
+                <h3>Escola Bíblica Dominical (EBD)</h3>
                 <p class="event-day">🗓️ Domingo às 09h00</p>
             </div>
 
             <div class="card">
-                <h3>Campanha de Oração</h3>
-                <p class="event-day">🗓️ Quarta-feira às 20h00</p>
+                <h3>Culto de Celebração da Família</h3>
+                <p class="event-day">🗓️ Domingo às 18h00</p>
             </div>
+        </div>
+    </section>
+
+    <!-- MINISTÉRIOS: Departamentos oficiais da AD-BH -->
+    <section id="ministerios" class="container">
+        <h2>Nossos Ministérios</h2>
+        <div class="events-grid">
+            <div class="card department">
+                <h3>UMADBH</h3>
+                <p>União de Mocidade da Assembleia de Deus de BH</p>
+            </div>
+            <div class="card department">
+                <h3>UFADBH</h3>
+                <p>União Feminina (Círculo de Oração)</p>
+            </div>
+            <div class="card department">
+                <h3>UADBH (Infantil)</h3>
+                <p>Ministério com Crianças e Juniores</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- MÍDIA: Espaço para a transmissão ao vivo/YouTube igual ao site real -->
+    <section id="midia" class="container">
+        <h2>Cultos Online & Mídia</h2>
+        <p>Assista às nossas transmissões ao vivo e reveja mensagens anteriores direto do nosso canal.</p>
+        <div class="video-container">
+            <!-- Substitua o ID do vídeo pelo link real da transmissão quando houver -->
+            <iframe width="100%" height="315" src="https://www.youtube.com/embed/live_stream?channel=UC-YOUR-CHANNEL-ID" frameborder="0" allowfullscreen></iframe>
         </div>
     </section>
 
     <section id="lideranca" class="container">
         <h2>Área da Liderança</h2>
         <p>
-            A liderança possui um ambiente separado na nuvem para
-            armazenamento de fotos, relatórios e materiais internos.
+            A liderança possui um ambiente separado na nuvem para armazenamento de relatórios de secretarias, agendamentos de batismos e materiais internos pastorais.
         </p>
         <button onclick="mostrarMensagem()">
             Mais Informações
@@ -76,16 +113,17 @@
     </section>
 
     <section id="contato" class="container">
-        <h2>Contato</h2>
+        <h2>Pedidos de Oração & Contato</h2>
         <div class="contact-box">
-            <p><strong>📧 Email:</strong> contato@igreja.com</p>
-            <p><strong>📍 Localização:</strong> Ribeirão das Neves - Minas Gerais</p>
+            <p><strong>📍 Templo Central:</strong> Rua São Paulo, 1341 - Centro, Belo Horizonte - MG</p>
+            <p><strong>📧 Secretaria:</strong> contato@assembleiadeuzbh.com</p>
+            <p><strong>🙏 Envie seu Pedido:</strong> Use o botão da liderança ou nosso canal de atendimento para registrar seu pedido de oração.</p>
         </div>
     </section>
 </main>
 
 <footer>
-    <p>Projeto Extensionista ADS • Assembleia de Deus</p>
+    <p>Projeto Extensionista ADS • Baseado nas informações oficiais da Assembleia de Deus de BH</p>
 </footer>
 
 <script src="script.js"></script>
